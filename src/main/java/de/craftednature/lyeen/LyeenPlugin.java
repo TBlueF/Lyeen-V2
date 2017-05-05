@@ -29,11 +29,15 @@ package de.craftednature.lyeen;
 import org.spongepowered.api.plugin.Plugin;
 
 @Plugin (
-	id = "lyeen",
-	name = "Lyeen",
-	version = "0.1-1.11.2"
+	id = LyeenPlugin.PLUGIN_ID,
+	name = LyeenPlugin.PLUGIN_NAME,
+	version = LyeenPlugin.PLUGIN_VERSION
 )
 
 public class LyeenPlugin {
+	
+	public static final String PLUGIN_ID = "lyeen";
+	public static final String PLUGIN_NAME = "Lyeen";
+	public static final String PLUGIN_VERSION = "0.1-7";
 	
 }
