@@ -26,6 +26,12 @@
 
 package de.craftednature.lyeen;
 
+import javax.inject.Inject;
+
+import org.slf4j.Logger;
+import org.spongepowered.api.event.Listener;
+import org.spongepowered.api.event.Order;
+import org.spongepowered.api.event.game.state.GameStartingServerEvent;
 import org.spongepowered.api.plugin.Plugin;
 
 @Plugin (
@@ -38,6 +44,27 @@ public class LyeenPlugin {
 	
 	public static final String PLUGIN_ID = "lyeen";
 	public static final String PLUGIN_NAME = "Lyeen";
-	public static final String PLUGIN_VERSION = "0.1-7";
+	public static final String PLUGIN_VERSION = "7-0.1";
+	
+	public static LyeenPlugin instance;
+	
+	@Inject private Logger log;
+	
+	public void init(){
+		instance = this;
+	}
+
+	@Listener(order = Order.DEFAULT)
+	public void onServerStart(GameStartingServerEvent evt){
+		init();
+	}
+	
+	public static LyeenPlugin getInstance(){
+		return instance;
+	}
+	
+	public static Logger getLogger(){
+		return instance.log;
+	}
 	
 }
