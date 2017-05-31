@@ -16,7 +16,6 @@ configurations {
 dependencies {
     compile "org.spongepowered:spongeapi:6.0.0-SNAPSHOT"
 //  shade "mysql:mysql-connector-java:5.1.36" // we need this later
-	testCompile "junit:junit:4.12"
 }
 
 compileJava.options.compilerArgs.add '-parameters'
